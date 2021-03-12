@@ -1,0 +1,32 @@
+Given two blackjack hands (A, B), Score each blackjack hand.
+
+Comparing Scores:
+If either hand > 21 it loses.  
+	If one hand remains it wins.
+	End
+Compare the two scores to each other.
+	If A > B
+		A wins
+	If B > A
+		B wins
+	If A == B 
+		Tie
+End
+
+Score a hand:
+Let S tally the score, initialized at 0.
+Let A tally the Aces in the hand, initialized at zero.
+For each card in the hand:
+	If card rank is in (JACK, QUEEN, KING) 
+		cardValue = 10
+	If card rank == ACE
+		cardValue = 1
+		A = A + 1
+	Else
+		cardValue = card rank
+	S = S + cardValue
+While ((S+10)<=21) && (A > 0)
+	S = S + 10
+	A = A -1
+The resulting value of S is the hand’s score.
+End Score.
